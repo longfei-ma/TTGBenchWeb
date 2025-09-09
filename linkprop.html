@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<!-- saved from url=(0039)https://ogb.stanford.edu/docs/linkprop/ -->
+<html lang="en-US"><!-- Global site tag (gtag.js) - Google Analytics --><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript" async="" src="./assets/analytics.js.下载"></script><script type="text/javascript" async="" src="./assets/js"></script><script async="" src="./assets/js(1)"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-165257358-1');
+</script>
+
+	<link rel="icon" href="./assets/icon.png" type="image/png">
+    <link rel="shortcut icon" href="./assets/icon.png" type="image/png">
+    <link rel="apple-touch-icon" href="./assets/icon.png">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="./assets/main.css">
+    <link rel="stylesheet" href="./assets/font-awesome.min.css">
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>TTGBench</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<meta name="generator" content="Jekyll v3.10.0">
+<meta property="og:title" content="TTGBench">
+<meta property="og:locale" content="en_US">
+<!-- End Jekyll SEO tag -->
+
+<style>
+        .red-text { color: #e74c3c; }
+        .blue-text { color: #3498db; }
+        .green-text { color: #27ae60; }
+        .yellow-text { color: #f39c12; }
+        .purple-text { color: #9b59b6; }
+        
+        /* 或者使用更语义化的类名 */
+        .small { color: #e74c3c; }
+        .medium { color: #3498db; }
+        .large { color: #27ae60; }
+        .highlight { color: #f39c12; }
+    </style>
+</head>
+
+
+<body>
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container navbar-container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+            <a class="navbar-brand" href="index.html">
+                <span><img src="./assets/ttgbench.png" alt="Logo"></span> 
+            </a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <div class="navbar-right">
+                <ul class="nav navbar-nav">
+                <li><a href="index.html">Overview</a></li>
+                <li><a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    Datasets <span class="caret"></span>
+                </a>
+                    <ul class="dropdown-menu">
+                      <li><a href="dataset_overview.html">Overview</a></li>
+                      <li class="divider"></li>
+                      <li><a href="linkprop.html">Future Link Prediction</a></li>
+                      <li class="divider"></li>
+                      <li><a href="nodeprop.html">Dynamic Node Classification</a></li>
+                    </ul>
+                </li>
+                <li><a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    Leaderboards <span class="caret"></span>
+                </a>
+                    <ul class="dropdown-menu">
+                      <li><a href="leader_linkprop.html">Future Link Prediction</a></li>
+                      <li class="divider"></li>
+                      <li><a href="leader_nodeprop.html">Dynamic Node Classification</a></li>
+                      <li class="divider"></li>
+                      <li><a href="leader_rules.html">Rules</a></li>
+                    </ul>
+                </li>
+                
+                <li><a href="https://openreview.net/forum?id=2DBoOpa8FY">Paper</a></li>
+                <li><a href="https://anonymous.4open.science/r/TTGBench-0379/README.md">Github</a></li>
+            </ul></div>
+        </div>
+    </div>
+</nav>
+
+
+    <div class="page-content">
+        <div class="wrapper">
+            <div class="container">
+    <div class="row">
+<!--         <div class="col-md-3">
+          <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-1" aria-expanded="false" aria-controls="collapse-1">
+            Welcome
+          </a>
+        </h4>
+      </div>
+      
+      
+      <div class="panel-collapse collapse" id="collapse-1" role="tabpanel" aria-label="Side Navigation">
+        <div class="list-group">
+          
+            
+            
+            <a class="list-group-item " href="/docs/home/">Get Started</a>
+          
+        </div>
+      </div>
+    </div>
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-2" aria-expanded="false" aria-controls="collapse-2">
+            Datasets
+          </a>
+        </h4>
+      </div>
+      
+      
+      <div class="panel-collapse" id="collapse-2" role="tabpanel" aria-label="Side Navigation">
+        <div class="list-group">
+          
+            
+            
+            <a class="list-group-item " href="/docs/dataset_overview/">OGB Dataset Overview</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/nodeprop/">Node Property Prediction</a>
+          
+            
+            
+            <a class="list-group-item active" href="/docs/linkprop/">Link Property Prediction</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/graphprop/">Graph Property Prediction</a>
+          
+        </div>
+      </div>
+    </div>
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-3" aria-expanded="false" aria-controls="collapse-3">
+            Leaderboard
+          </a>
+        </h4>
+      </div>
+      
+      
+      <div class="panel-collapse collapse" id="collapse-3" role="tabpanel" aria-label="Side Navigation">
+        <div class="list-group">
+          
+            
+            
+            <a class="list-group-item " href="/docs/leader_overview/">Leaderboards</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/leader_nodeprop/">Leaderboards for Node Property Prediction</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/leader_linkprop/">Leaderboards for Link Property Prediction</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/leader_graphprop/">Leaderboards for Graph Property Prediction</a>
+          
+        </div>
+      </div>
+    </div>
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-4" aria-expanded="false" aria-controls="collapse-4">
+            Frequently Asked Questions
+          </a>
+        </h4>
+      </div>
+      
+      
+      <div class="panel-collapse collapse" id="collapse-4" role="tabpanel" aria-label="Side Navigation">
+        <div class="list-group">
+          
+            
+            
+            <a class="list-group-item " href=""></a>
+          
+        </div>
+      </div>
+    </div>
+  
+</div>
+
+        </div> -->
+        <div class="col-md-12">
+            <h1>Future Link Prediction</h1>
+            <div id="markdown-content-container"><h5 id="the-task-is-to-predict-properties-of-edges-pairs-of-nodes">The task is to predict existence of edges (pairs of nodes) at a future time.</h5>
+			
+			
+
+<h3 id="summary">Summary</h3>
+
+<h4 id="--datasets">- Datasets</h4>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th style="text-align: center">Scale</th>
+      <th style="text-align: left">Name</th>
+      <th style="text-align: center">#Nodes</th>
+      <th style="text-align: center">#Total Edges</th>
+      <th style="text-align: center">#Unique Edges</th>
+      <th style="text-align: center">#Unique Steps</th>
+      <th style="text-align: center">Novelty</th>
+      <th style="text-align: center">Metric</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><span class="red-text">Small</span></td>
+      <td style="text-align: left"><a href="#FOOD">FOOD</a></td>
+      <td style="text-align: center">33,773</td>
+      <td style="text-align: center">401,057</td>
+      <td style="text-align: center">401,057</td>
+      <td style="text-align: center">6,252</td>
+      <td style="text-align: center"> 1.0</td>
+      <td style="text-align: center">AP &amp; ROC-AUC</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><span class="red-text">Small</span></td>
+      <td style="text-align: left"><a href="#IMDB">IMDB</a></td>
+      <td style="text-align: center">32,371</td>
+      <td style="text-align: center"> 310,891</td>
+      <td style="text-align: center"> 310,891</td>
+      <td style="text-align: center">7,099</td>
+      <td style="text-align: center">1.0</td>
+      <td style="text-align: center">AP &amp; ROC-AUC</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><span class="blue-text">Medium</span></td>
+      <td style="text-align: left"><a href="#Librarything">Librarything</a></td>
+      <td style="text-align: center"> 51,201</td>
+      <td style="text-align: center"> 785,690</td>
+      <td style="text-align: center">785,690</td>
+      <td style="text-align: center"> 2,914</td>
+      <td style="text-align: center">1.0</td>
+      <td style="text-align: center">AP &amp; ROC-AUC</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><span class="blue-text">Medium</span></td>
+      <td style="text-align: left"><a href="#Beeradvocate">Beeradvocate</a></td>
+      <td style="text-align: center"> 99,361</td>
+      <td style="text-align: center"> 1,586,573</td>
+      <td style="text-align: center"> 1,571,767</td>
+      <td style="text-align: center"> 1,577,920</td>
+      <td style="text-align: center"> 0.991</td>
+      <td style="text-align: center">AP &amp; ROC-AUC</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><span class="green-text">Large</span></td>
+      <td style="text-align: left"><a href="#Ratebeer">Ratebeer</a></td>
+      <td style="text-align: center">139,538</td>
+      <td style="text-align: center"> 2,924,105</td>
+      <td style="text-align: center"> 2,855,175</td>
+      <td style="text-align: center"> 4,254</td>
+      <td style="text-align: center">1.0</td>
+      <td style="text-align: center">AP &amp; ROC-AUC</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><span class="green-text">Large</span></td>
+      <td style="text-align: left"><a href="#Amazon-Kindle">Amazon-Kindle</a></td>
+      <td style="text-align: center"> 215,504</td>
+      <td style="text-align: center"> 5,621,343</td>
+      <td style="text-align: center">5,561,738</td>
+      <td style="text-align: center">5,484,604</td>
+      <td style="text-align: center">1.0</td>
+      <td style="text-align: center">AP &amp; ROC-AUC</td>
+    </tr>
+    
+  </tbody>
+</table>
+
+<p><a name="FOOD"></a></p>
+<hr>
+
+<h3 id="dataset-ogbl-ppa-leaderboard">Dataset <code class="language-plaintext highlighter-rouge">FOOD</code> (<a href="leader_linkprop.html#FOOD">Leaderboard</a>):</h3>
+
+<p><strong>Temporal Graph:</strong> The <code class="language-plaintext highlighter-rouge">FOOD</code> dataset contains recipe details and reviews from Food.com (formerly GeniusKitchen). The FOOD dataset comprises a rich collection of cooking recipes and review texts, capturing 18 years of user interactions. This dataset provides insights into culinary trends, user preferences, and the evolution of recipes over time [1]. Each entry includes detailed recipe descriptions, ingredient lists, and user-generated reviews, making it an invaluable resource for studying temporal dynamics in food-related interactions. In this graph, users and recipes are denoted as nodes and a timespamped link between them is created if the user remarked the recipe at timestamp t. Each recipe has described texts of cooking steps and culinary category.</p>
+
+ 
+<p><strong>Prediction task:</strong> The considered task for this dataset is to predict whether a user will review a given cook recipe at a given time.</p>
+
+<h4 id="references">References</h4>
+
+<p>[1] Generating Personalized Recipes from Historical User Preferences Bodhisattwa Prasad Majumder*, Shuyang Li*, Jianmo Ni, Julian McAuley EMNLP, 2019. <br></p>
+<h5 id="license-cc-0">License: MIT license</h5>
+
+<p><a name="IMDB"></a></p>
+
+<hr>
+
+<h3 id="dataset-ogbl-collab-leaderboard">Dataset <code class="language-plaintext highlighter-rouge">IMDB</code> (<a href="leader_linkprop.html#IMDB">Leaderboard</a>):</h3>
+
+<p><strong>Temporal Graph:</strong> The <code class="language-plaintext highlighter-rouge">IMDB</code> dataset is composed of users, items and the reviews between them. Each movie has plot summary and the reviews are users' comment on there feelings [2]. Each review owns both raw textual contents and timestamp this review is conducted. The movies all prodive multile style tags, which we adopt as the temporal interests labels of users when a user comment this movie at some time. This dataset offers a detailed view of cinematic trends and audience perceptions over time. </p>
+
+<p><strong>Prediction task:</strong> The considered task for this dataset is to predict whether a user will review a given movie at a given time.</p>
+
+<h4 id="references-1">References</h4>
+
+<p>[2] Misra, Rishabh. "IMDB Spoiler Dataset." DOI: 10.13140/RG.2.2.11584.15362 (2019). <br></p>
+<h5 id="license-odc-by">License: MIT license</h5>
+
+<p><a name="Librarything"></a></p>
+
+<hr>
+
+<h3 id="dataset-ogbl-ddi-leaderboard">Dataset <code class="language-plaintext highlighter-rouge">Librarything</code> (<a href="leader_linkprop.html#Librarything">Leaderboard</a>):</h3>
+
+<p><strong>Temporal Graph:</strong> The <code class="language-plaintext highlighter-rouge">Librarything</code> dataset comes from a book review website, <a href="https://www.librarything.com/">LibraryThing</a>. The LibraryThing dataset focuses on book reviews, featuring detailed descriptions of books alongside user-generated reviews [3] [4]. This dataset captures a diverse range of literary works, from classic novels to contemporary bestsellers, and provides insights into reader preferences and trends over time. In this create graph, users and books are denoted as nodes and the timestamped reviews are created as temporal links among them with raw textural comments. </p>
+
+<p><strong>Prediction task:</strong> The considered task for this dataset is to predict whether a user will comment a given book at a given time.</p>
+
+<h4 id="references-2">References</h4>
+
+<p>[3] SPMC: Socially-aware personalized Markov chains for sparse sequential recommendation. Chenwei Cai, Ruining He, Julian McAuley. IJCAI, 2017 <br>
+[4] Improving latent factor models via personalized feature projection for one-class recommendation. Tong Zhao, Julian McAuley, Irwin King. Conference on Information and Knowledge Management (CIKM), 2015. <br></p>
+<h5 id="license-cc-0-1">License: MIT license</h5>
+
+<p><a name="Beeradvocate"></a></p>
+
+<hr>
+
+<h3 id="dataset-ogbl-citation2-leaderboard">Dataset <code class="language-plaintext highlighter-rouge">Beeradvocate</code> (<a href="leader_linkprop.html#Beeradvocate">Leaderboard</a>):</h3>
+
+<p><strong>Temporal Graph:</strong> The <code class="language-plaintext highlighter-rouge">Beeradvocate</code> dataset is dedicated to beer reviews, encompassing a wide variety of beers and user-generated ratings [5] [6]. We represent users and beer as the nodes of the temporal graph. The beers each owns styles, which can be assigned as temporal interests of users. This dataset offers a unique perspective on consumer preferences in the craft beer industry, documenting how user reviews and ratings have changed over time.</p>
+
+<p><strong>Prediction task:</strong> The considered task for this dataset is to predict whether a user will comment a given beer at a given time.</p>
+
+<h4 id="references-3">References</h4>
+
+<p>[5] Learning attitudes and attributes from multi-aspect reviews. Julian McAuley, Jure Leskovec, Dan Jurafsky. International Conference on Data Mining (ICDM), 2012 <br>
+[6] From amateurs to connoisseurs: modeling the evolution of user expertise through online reviews. Julian McAuley, Jure Leskovec. WWW, 2013. <br></p>
+<h5 id="license-odc-by-1">License: MIT license</h5>
+
+<p><a name="Ratebeer"></a></p>
+
+<hr>
+
+<h3 id="dataset-ogbl-wikikg2-leaderboard">Dataset <code class="language-plaintext highlighter-rouge">Ratebeer</code> (<a href="leader_linkprop.html#Ratebeer">Leaderboard</a>):</h3>
+
+<p><strong>Temporal Graph:</strong> The <code class="language-plaintext highlighter-rouge">Ratebeer</code> dataset is another  comprehensive collection of beer reviews, similar to the BeerAdvocate dataset but distinct in its user base and focus. This dataset documents a wide array of beers and includes detailed user ratings and reviews [5] [6], allowing to explore consumer behavior in the beer industry. The temporal aspect of the dataset enables investigations into how beer trends have evolved, the influence of marketing and branding on user perceptions, and the role of social interactions in shaping the craft beer community.</p>
+
+<p><strong>Prediction task:</strong> The considered task for this dataset is to predict whether a user will comment a given beer at a given time. </p>
+
+<h4 id="references-4">References</h4>
+
+<p>[5] Learning attitudes and attributes from multi-aspect reviews. Julian McAuley, Jure Leskovec, Dan Jurafsky. International Conference on Data Mining (ICDM), 2012 <br>
+[6] From amateurs to connoisseurs: modeling the evolution of user expertise through online reviews. Julian McAuley, Jure Leskovec. WWW, 2013. <br></p>
+<h5 id="license-odc-by-1">License: MIT license</h5>
+
+<p><a name="Amazon-Kindle"></a></p>
+
+<hr>
+
+<h3 id="dataset-ogbl-biokg-leaderboard">Dataset <code class="language-plaintext highlighter-rouge">Amazon-Kindle</code> (<a href="leader_linkprop.html#Amazon-Kindle">Leaderboard</a>):</h3>
+
+<p><strong>Temporal Graph:</strong> The <code class="language-plaintext highlighter-rouge">Amazon-Kindle</code> dataset is an Amazon online shopping dataset collected from [7] and is specifically focused on user reviews of various products in the Kindle category. This graph is a product review network spanning from 1996 to September 2023, composing of rich textural informations. Specifically, the products own rich descriptions and the reviews have rich rating contents. This dataset captures the evolution of consumer feedback, providing a rich source of information on user experiences with e-books and Kindle devices. </p>
+
+<p><strong>Prediction task:</strong> The considered task for this dataset is to predict whether a user will comment a given product at a given time.</p>
+
+<h4 id="references-4">References</h4>
+
+<p>[7] Yupeng Hou, Jiacheng Li, Zhankui He, An Yan, Xiusi Chen, and Julian McAuley. 2024. Bridging Language and Items for Retrieval and Recommendation. arXiv preprint arXiv:2403.03952 (2024). <br>
+
+<h5 id="license-cc-0-3">License: MIT license</h5>
+
+
+            <!-- <hr> -->
+            <!-- 
+
+
+
+
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+    <ul class="pager">
+      
+        
+        
+        <li class="previous">
+          <a href="/docs/nodeprop/">
+            <span aria-hidden="true">&larr;</span> Previous
+          </a>
+        </li>
+      
+
+      
+        
+        
+        <li class="next">
+          <a href="/docs/graphprop/">
+            Next <span aria-hidden="true">&rarr;</span>
+          </a>
+        </li>
+      
+      </ul>
+    <div class="clear"></div>
+    
+ -->
+        </div>
+
+    </div>
+</div>
+
+        </div>
+    </div>
+
+    <footer class="footer">
+    <div class="container">
+
+        <p class="text-center">
+            TTGBench 2025 |
+            Powered by <a href="https://github.com/aksakalli/jekyll-doc-theme">Jekyll Doc Theme</a>
+        </p>
+        <!-- <p class="text-muted">Place sticky footer content here.</p> -->
+    </div>
+</footer>
+
+    <script>
+  var baseurl = ''
+</script>
+<script src="./assets/jquery-1.12.4.min.js.下载"></script>
+<script src="./assets/bootstrap.min.js.下载"></script>
+<script src="./assets/typeahead.bundle.min.js.下载"></script>
+
+<script src="./assets/main.js.下载"></script>
+
+
+
+
+</body></html>

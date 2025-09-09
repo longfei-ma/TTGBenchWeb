@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<!-- saved from url=(0046)https://ogb.stanford.edu/docs/leader_nodeprop/ -->
+<html lang="en-US"><!-- Global site tag (gtag.js) - Google Analytics --><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript" async="" src="./assets/analytics.js.下载"></script><script type="text/javascript" async="" src="./assets/js"></script><script async="" src="./assets/js(1)"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-165257358-1');
+</script>
+
+<link rel="icon" href="./assets/icon.png" type="image/png">
+    <link rel="shortcut icon" href="./assets/icon.png" type="image/png">
+    <link rel="apple-touch-icon" href="./assets/icon.png">
+    
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="./assets/main.css">
+    <link rel="stylesheet" href="./assets/font-awesome.min.css">
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>TTGBench</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<meta name="generator" content="Jekyll v3.10.0">
+<meta property="og:title" content="TTGBench">
+<meta property="og:locale" content="en_US">
+</head>
+
+
+<body>
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container navbar-container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+            <a class="navbar-brand" href="index.html">
+                <span><img src="./assets/ttgbench.png" alt="Logo"></span> 
+            </a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <div class="navbar-right">
+                <ul class="nav navbar-nav">
+                <li><a href="index.html">Overview</a></li>
+                <li><a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    Datasets <span class="caret"></span>
+                </a>
+                    <ul class="dropdown-menu">
+                      <li><a href="dataset_overview.html">Overview</a></li>
+                      <li class="divider"></li>
+                      <li><a href="linkprop.html">Future Link Prediction</a></li>
+                      <li class="divider"></li>
+                      <li><a href="nodeprop.html">Dynamic Node Classification</a></li>
+                    </ul>
+                </li>
+                <li><a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    Leaderboards <span class="caret"></span>
+                </a>
+                    <ul class="dropdown-menu">
+                      <li><a href="leader_linkprop.html">Future Link Prediction</a></li>
+                      <li class="divider"></li>
+                      <li><a href="leader_nodeprop.html">Dynamic Node Classification</a></li>
+                      <li class="divider"></li>
+                      <li><a href="leader_rules.html">Rules</a></li>
+                    </ul>
+                </li>
+                
+                <li><a href="https://openreview.net/forum?id=2DBoOpa8FY">Paper</a></li>
+                <li><a href="https://anonymous.4open.science/r/TTGBench-0379/README.md">Github</a></li>
+            </ul></div>
+        </div>
+    </div>
+</nav>
+
+
+    <div class="page-content">
+        <div class="wrapper">
+            <div class="container">
+    <div class="row">
+<!--         <div class="col-md-3">
+          <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-1" aria-expanded="false" aria-controls="collapse-1">
+            Welcome
+          </a>
+        </h4>
+      </div>
+      
+      
+      <div class="panel-collapse collapse" id="collapse-1" role="tabpanel" aria-label="Side Navigation">
+        <div class="list-group">
+          
+            
+            
+            <a class="list-group-item " href="/docs/home/">Get Started</a>
+          
+        </div>
+      </div>
+    </div>
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-2" aria-expanded="false" aria-controls="collapse-2">
+            Datasets
+          </a>
+        </h4>
+      </div>
+      
+      
+      <div class="panel-collapse collapse" id="collapse-2" role="tabpanel" aria-label="Side Navigation">
+        <div class="list-group">
+          
+            
+            
+            <a class="list-group-item " href="/docs/dataset_overview/">OGB Dataset Overview</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/nodeprop/">Node Property Prediction</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/linkprop/">Link Property Prediction</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/graphprop/">Graph Property Prediction</a>
+          
+        </div>
+      </div>
+    </div>
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-3" aria-expanded="false" aria-controls="collapse-3">
+            Leaderboard
+          </a>
+        </h4>
+      </div>
+      
+      
+      <div class="panel-collapse" id="collapse-3" role="tabpanel" aria-label="Side Navigation">
+        <div class="list-group">
+          
+            
+            
+            <a class="list-group-item " href="/docs/leader_overview/">Leaderboards</a>
+          
+            
+            
+            <a class="list-group-item active" href="/docs/leader_nodeprop/">Leaderboards for Node Property Prediction</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/leader_linkprop/">Leaderboards for Link Property Prediction</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/leader_graphprop/">Leaderboards for Graph Property Prediction</a>
+          
+        </div>
+      </div>
+    </div>
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-4" aria-expanded="false" aria-controls="collapse-4">
+            Frequently Asked Questions
+          </a>
+        </h4>
+      </div>
+      
+      
+      <div class="panel-collapse collapse" id="collapse-4" role="tabpanel" aria-label="Side Navigation">
+        <div class="list-group">
+          
+            
+            
+            <a class="list-group-item " href=""></a>
+          
+        </div>
+      </div>
+    </div>
+  
+</div>
+
+        </div> -->
+        <div class="col-md-12">
+            <h1>Leaderboards for Dynamic Node Classification</h1>
+            <div id="markdown-content-container"><h5 id="check-leaderboards-for">Check leaderboards for</h5>
+<h6 id="--ogbn-products">- <a href="#FOOD">FOOD</a></h6>
+<h6 id="--ogbn-proteins">- <a href="#IMDB">IMDB</a></h6>
+<h6 id="--ogbn-arxiv">- <a href="#Beeradvocate">Beeradvocate</a></h6>
+<h6 id="--ogbn-papers100m">- <a href="#Amazon-Kindle">Amazon-Kindle</a></h6>
+<h6 id="--ogbn-mag">- <a href="#Ratebeer">Ratebeer</a></h6>
+
+<p><a name="FOOD"></a></p>
+
+<hr>
+
+<h3 id="leaderboard-for-ogbn-products">Leaderboard for <a href="nodeprop.html#FOOD">FOOD</a></h3>
+<h5 id="the-classification-accuracy-on-the-test-and-validation-sets-the-higher-the-better">The Jaccard Score, F1-micro and F1-macro for multi-label classification on the test sets. The higher, the better.</h5>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th style="text-align: center">Rank</th>
+      <th style="text-align: center">Method</th>
+      <th style="text-align: center">Role of LLM</th>
+      <th style="text-align: center">Jaccard Score</th>
+      <th style="text-align: center">F1-micro</th>
+	  <th style="text-align: center">F1-macro</th>
+      <th style="text-align: right">References</th>
+      <th style="text-align: center">#Params</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">GraphGPT</td>
+      <td style="text-align: center">Predictor</td>
+      <td style="text-align: center">55.47 ± 0.16</td>
+      <td style="text-align: center">68.94 ± 1.10</td>
+	  <td style="text-align: center">26.58 ± 0.09</td>
+	  <td style="text-align: right"><a href="https://arxiv.org/abs/2310.13023">Paper</a>, <a href="https://github.com/HKUDS/GraphGPT">Code</a></td>
+      <td style="text-align: center">530644992</td>
+      <td>Aug 1, 2025</td>
+    </tr>
+	<tr>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">LLaGA-HO</td>
+      <td style="text-align: center">Predictor</td>
+      <td style="text-align: center">55.06 ± 0.05</td>
+      <td style="text-align: center">68.55 ± 0.04</td>
+	  <td style="text-align: center">30.59 ± 0.22</td>
+	  <td style="text-align: right"><a href="https://arxiv.org/abs/2402.08170">Paper</a>, <a href="https://github.com/VITA-Group/LLaGA">Code</a></td>
+      <td style="text-align: center">6422528</td>
+      <td>Aug 1, 2025</td>
+    </tr>
+	<tr>
+      <td style="text-align: center">3</td>
+      <td style="text-align: center">LLaGA-ND</td>
+      <td style="text-align: center">Predictor</td>
+      <td style="text-align: center">55.04 ± 0.03</td>
+      <td style="text-align: center">68.52 ± 0.03</td>
+	  <td style="text-align: center">28.56 ± 0.08</td>
+	  <td style="text-align: right"><a href="https://arxiv.org/abs/2402.08170">Paper</a>, <a href="https://github.com/VITA-Group/LLaGA">Code</a></td>
+      <td style="text-align: center">6422528</td>
+      <td>Aug 1, 2025</td>
+    </tr>
+	<tr>
+      <td style="text-align: center">4</td>
+      <td style="text-align: center">DST-v2</td>
+      <td style="text-align: center">Predictor</td>
+      <td style="text-align: center">45.54 ± 0.14</td>
+      <td style="text-align: center">60.18 ± 1.55</td>
+	  <td style="text-align: center">37.70 ± 0.46</td>
+	  <td style="text-align: right"><a href="https://openreview.net/forum?id=2DBoOpa8FY">Paper</a>, <a href="https://anonymous.4open.science/r/TTGBench-0379/README.md">Code</a></td>
+      <td style="text-align: center">NA</td>
+      <td>Aug 1, 2025</td>
+    </tr>
+	<tr>
+      <td style="text-align: center">5</td>
+      <td style="text-align: center">DST-v1</td>
+      <td style="text-align: center">Predictor</td>
+      <td style="text-align: center">38.59 ± 0.09</td>
+      <td style="text-align: center">54.20 ± 0.49</td>
+	  <td style="text-align: center">34.40 ± 0.15</td>
+	  <td style="text-align: right"><a href="https://openreview.net/forum?id=2DBoOpa8FY">Paper</a>, <a href="https://anonymous.4open.science/r/TTGBench-0379/README.md">Code</a></td>
+      <td style="text-align: center">NA</td>
+      <td>Aug 1, 2025</td>
+    </tr>
+	<tr>
+      <td style="text-align: center">6</td>
+      <td style="text-align: center">TempPrompt</td>
+      <td style="text-align: center">Predictor</td>
+      <td style="text-align: center">37.58 ± 0.01</td>
+      <td style="text-align: center">53.19 ± 0.55</td>
+	  <td style="text-align: center">33.70 ± 0.22</td>
+	  <td style="text-align: right"><a href="https://openreview.net/forum?id=2DBoOpa8FY">Paper</a>, <a href="https://anonymous.4open.science/r/TTGBench-0379/README.md">Code</a></td>
+      <td style="text-align: center">NA</td>
+      <td>Aug 1, 2025</td>
+    </tr>
+	<tr>
+      <td style="text-align: center">7</td>
+      <td style="text-align: center">DyGFormer</td>
+      <td style="text-align: center">Enhancer</td>
+      <td style="text-align: center">36.15 ± 0.01</td>
+      <td style="text-align: center">49.15 ± 0.00</td>
+	  <td style="text-align: center">11.10 ± 0.01</td>
+	  <td style="text-align: right"><a href="https://arxiv.org/abs/2303.13047">Paper</a>, <a href="https://github.com/yule-BUAA/DyGLib">Code</a></td>
+      <td style="text-align: center">6098860</td>
+      <td>Aug 1, 2025</td>
+    </tr>
+	<tr>
+      <td style="text-align: center">8</td>
+      <td style="text-align: center">CAWN</td>
+      <td style="text-align: center">Enhancer</td>
+      <td style="text-align: center">35.39 ± 0.76</td>
+      <td style="text-align: center">48.35 ± 0.80</td>
+	  <td style="text-align: center">10.98 ± 0.12</td>
+	  <td style="text-align: right"><a href="https://openreview.net/forum?id=KYPz4YsCPj">Paper</a>, <a href="https://github.com/snap-stanford/CAW">Code</a></td>
+      <td style="text-align: center">44341348</td>
+      <td>Aug 1, 2025</td>
+    </tr>
+	<tr>
+      <td style="text-align: center">9</td>
+      <td style="text-align: center">TGN</td>
+      <td style="text-align: center">Enhancer</td>
+      <td style="text-align: center">18.08 ± 8.01</td>
+      <td style="text-align: center">24.58 ± 10.18</td>
+	  <td style="text-align: center">5.55 ± 2.56</td>
+	  <td style="text-align: right"><a href="https://arxiv.org/abs/2006.10637">Paper</a>, <a href="https://github.com/twitter-research/tgn">Code</a></td>
+      <td style="text-align: center">23065220</td>
+      <td>Aug 1, 2025</td>
+    </tr>
+	<tr>
+      <td style="text-align: center">10</td>
+      <td style="text-align: center">DyRep</td>
+      <td style="text-align: center">Enhancer</td>
+      <td style="text-align: center">0.76 ± 0.37</td>
+      <td style="text-align: center">2.03 ± 0.79</td>
+	  <td style="text-align: center">1.37 ± 0.03</td>
+	  <td style="text-align: right"><a href="https://openreview.net/forum?id=HyePrhR5KX">Paper</a>, <a href="https://github.com/yule-BUAA/DyGLib">Code</a></td>
+      <td style="text-align: center">18033284</td>
+      <td>Aug 1, 2025</td>
+    </tr>
+	<tr>
+      <td style="text-align: center">11</td>
+      <td style="text-align: center">TGAT</td>
+      <td style="text-align: center">Enhancer</td>
+      <td style="text-align: center">0.41 ± 0.21</td>
+      <td style="text-align: center">0.74 ± 0.34</td>
+	  <td style="text-align: center">0.25 ± 0.15</td>
+	  <td style="text-align: right"><a href="https://openreview.net/forum?id=rJeW1yHYwH">Paper</a>, <a href="https://github.com/yule-BUAA/DyGLib">Code</a></td>
+      <td style="text-align: center">15517316</td>
+      <td>Aug 1, 2025</td>
+    </tr>
+	<tr>
+      <td style="text-align: center">12</td>
+      <td style="text-align: center">JODIE</td>
+      <td style="text-align: center">Enhancer</td>
+      <td style="text-align: center">0.14 ± 0.04</td>
+      <td style="text-align: center">0.39 ± 0.07</td>
+	  <td style="text-align: center">0.83 ± 0.03</td>
+	  <td style="text-align: right"><a href="https://dl.acm.org/doi/10.1145/3292500.3330895">Paper</a>, <a href="https://github.com/claws-lab/jodie">Code</a></td>
+      <td style="text-align: center">3702564</td>
+      <td>Aug 1, 2025</td>
+    </tr>
+	<tr>
+      <td style="text-align: center">13</td>
+      <td style="text-align: center">GraphMixer</td>
+      <td style="text-align: center">Enhancer</td>
+      <td style="text-align: center">0.12 ± 0.01</td>
+      <td style="text-align: center">0.21 ± 0.01</td>
+	  <td style="text-align: center">0.17 ± 0.01</td>
+	  <td style="text-align: right"><a href="https://openreview.net/forum?id=ayPPc0SyLv1">Paper</a>, <a href="https://github.com/yule-BUAA/DyGLib">Code</a></td>
+      <td style="text-align: center">12567644</td>
+      <td>Aug 1, 2025</td>
+    </tr>
+	<tr>
+      <td style="text-align: center">14</td>
+      <td style="text-align: center">TCL</td>
+      <td style="text-align: center">Enhancer</td>
+      <td style="text-align: center">0.08 ± 0.02</td>
+      <td style="text-align: center">0.02 ± 0.01</td>
+	  <td style="text-align: center">0.01 ± 0.00</td>
+	  <td style="text-align: right"><a href="https://arxiv.org/abs/2105.07944">Paper</a>, <a href="https://github.com/yule-BUAA/DyGLib">Code</a></td>
+      <td style="text-align: center">17313060</td>
+      <td>Aug 1, 2025</td>
+    </tr>
+	
+  </tbody>
+</table>
+
+<p><a name="IMDB"></a></p>
+
+<hr>
+
+<h3 id="leaderboard-for-ogbn-arxiv">Leaderboard for <a href="nodeprop.html#IMDB">IMDB</a></h3>
+<h5 id="the-classification-accuracy-on-the-test-and-validation-sets-the-higher-the-better-1">The Jaccard Score, F1-micro and F1-macro for multi-label classification on the test sets. The higher, the better.</h5>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th style="text-align: center">Rank</th>
+      <th style="text-align: center">Method</th>
+      <th style="text-align: center">Role of LLM</th>
+      <th style="text-align: center">Jaccard Score</th>
+      <th style="text-align: center">F1-micro</th>
+	  <th style="text-align: center">F1-macro</th>
+      <th style="text-align: right">References</th>
+      <th style="text-align: center">#Params</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">LLaGA-HO</td>
+      <td style="text-align: center">Predictor</td>
+      <td style="text-align: center">33.18 ± 0.12</td>
+      <td style="text-align: center">42.06 ± 0.11</td>
+	  <td style="text-align: center">20.74 ± 0.08</td>
+	  <td style="text-align: right"><a href="https://arxiv.org/abs/2402.08170">Paper</a>, <a href="https://github.com/VITA-Group/LLaGA">Code</a></td>
+      <td style="text-align: center">6422528</td>
+      <td>Aug 1, 2025</td>
+    </tr>
+	<tr>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">LLaGA-ND</td>
+      <td style="text-align: center">Predictor</td>
+      <td style="text-align: center">32.88 ± 0.06</td>
+      <td style="text-align: center">41.73 ± 0.09</td>
+	  <td style="text-align: center">19.21 ± 0.08</td>
+	  <td style="text-align: right"><a href="https://arxiv.org/abs/2402.08170">Paper</a>, <a href="https://github.com/VITA-Group/LLaGA">Code</a></td>
+      <td style="text-align: center">6422528</td>
+      <td>Aug 1, 2025</td>
+    </tr>
+	<tr>
+      <td style="text-align: center">3</td>
+      <td style="text-align: center">GraphGPT</td>
+      <td style="text-align: center">Predictor</td>
+      <td style="text-align: center">32.69 ± 1.23</td>
+      <td style="text-align: center">41.58 ± 0.24</td>
+	  <td style="text-align: center">20.21 ± 0.31</td>
+	  <td style="text-align: right"><a href="https://arxiv.org/abs/2310.13023">Paper</a>, <a href="https://github.com/HKUDS/GraphGPT">Code</a></td>
+      <td style="text-align: center">530644992</td>
+      <td>Aug 1, 2025</td>
+    </tr>
+	<tr>
+      <td style="text-align: center">4</td>
+      <td style="text-align: center">DST-v1</td>
+      <td style="text-align: center">Predictor</td>
+      <td style="text-align: center">31.32 ± 0.19</td>
+      <td style="text-align: center">42.57 ± 0.21</td>
+	  <td style="text-align: center">29.39 ± 0.17</td>
+	  <td style="text-align: right"><a href="https://openreview.net/forum?id=2DBoOpa8FY">Paper</a>, <a href="https://anonymous.4open.science/r/TTGBench-0379/README.md">Code</a></td>
+      <td style="text-align: center">NA</td>
+      <td>Aug 1, 2025</td>
+    </tr>
+	<tr>
+      <td style="text-align: center">5</td>
+      <td style="text-align: center">DST-v2</td>
+      <td style="text-align: center">Predictor</td>
+      <td style="text-align: center">31.21 ± 0.15</td>
+      <td style="text-align: center">42.46 ± 0.13</td>
+	  <td style="text-align: center">29.15 ± 0.12</td>
+	  <td style="text-align: right"><a href="https://openreview.net/forum?id=2DBoOpa8FY">Paper</a>, <a href="https://anonymous.4open.science/r/TTGBench-0379/README.md">Code</a></td>
+      <td style="text-align: center">NA</td>
+      <td>Aug 1, 2025</td>
+    </tr>
+	<tr>
+      <td style="text-align: center">6</td>
+      <td style="text-align: center">TempPrompt</td>
+      <td style="text-align: center">Predictor</td>
+      <td style="text-align: center">30.86 ± 0.12</td>
+      <td style="text-align: center">42.12 ± 0.17</td>
+	  <td style="text-align: center">28.98 ± 0.03</td>
+	  <td style="text-align: right"><a href="https://openreview.net/forum?id=2DBoOpa8FY">Paper</a>, <a href="https://anonymous.4open.science/r/TTGBench-0379/README.md">Code</a></td>
+      <td style="text-align: center">NA</td>
+      <td>Aug 1, 2025</td>
+    </tr>
+	<tr>
+      <td style="text-align: center">7</td>
+      <td style="text-align: center">CAWN</td>
+      <td style="text-align: center">Enhancer</td>
+      <td style="text-align: center">6.72 ± 3.66</td>
+      <td style="text-align: center">9.89 ± 4.85</td>
+	  <td style="text-align: center">2.98 ± 1.91</td>
+	  <td style="text-align: right"><a href="https://openreview.net/forum?id=KYPz4YsCPj">Paper</a>, <a href="https://github.com/snap-stanford/CAW">Code</a></td>
+      <td style="text-align: center">44341348</td>
+      <td>Aug 1, 2025</td>
+    </tr>
+	<tr>
+      <td style="text-align: center">8</td>
+      <td style="text-align: center">DyRep</td>
+      <td style="text-align: center">Enhancer</td>
+      <td style="text-align: center">2.88 ± 1.04</td>
+      <td style="text-align: center">7.22 ± 2.26</td>
+	  <td style="text-align: center">4.16 ± 0.39</td>
+	  <td style="text-align: right"><a href="https://openreview.net/forum?id=HyePrhR5KX">Paper</a>, <a href="https://github.com/yule-BUAA/DyGLib">Code</a></td>
+      <td style="text-align: center">18033284</td>
+      <td>Aug 1, 2025</td>
+    </tr>
+	<tr>
+      <td style="text-align: center">9</td>
+      <td style="text-align: center">JODIE</td>
+      <td style="text-align: center">Enhancer</td>
+      <td style="text-align: center">2.17 ± 0.40</td>
+      <td style="text-align: center">6.21 ± 0.78</td>
+	  <td style="text-align: center">4.20 ± 0.83</td>
+	  <td style="text-align: right"><a href="https://dl.acm.org/doi/10.1145/3292500.3330895">Paper</a>, <a href="https://github.com/claws-lab/jodie">Code</a></td>
+      <td style="text-align: center">3702564</td>
+      <td>Aug 1, 2025</td>
+    </tr>
+	<tr>
+      <td style="text-align: center">10</td>
+      <td style="text-align: center">GraphMixer</td>
+      <td style="text-align: center">Enhancer</td>
+      <td style="text-align: center">0.31 ± 0.11</td>
+      <td style="text-align: center">0.61 ± 0.31</td>
+	  <td style="text-align: center">0.42 ± 0.22</td>
+	  <td style="text-align: right"><a href="https://openreview.net/forum?id=ayPPc0SyLv1">Paper</a>, <a href="https://github.com/yule-BUAA/DyGLib">Code</a></td>
+      <td style="text-align: center">12567644</td>
+      <td>Aug 1, 2025</td>
+    </tr>
+	<tr>
+      <td style="text-align: center">11</td>
+      <td style="text-align: center">TGAT</td>
+      <td style="text-align: center">Enhancer</td>
+      <td style="text-align: center">0.27 ± 0.21</td>
+      <td style="text-align: center">0.50 ± 0.20</td>
+	  <td style="text-align: center">0.62 ± 0.22</td>
+	  <td style="text-align: right"><a href="https://openreview.net/forum?id=rJeW1yHYwH">Paper</a>, <a href="https://github.com/yule-BUAA/DyGLib">Code</a></td>
+      <td style="text-align: center">15517316</td>
+      <td>Aug 1, 2025</td>
+    </tr>
+	<tr>
+      <td style="text-align: center">12</td>
+      <td style="text-align: center">TGN</td>
+      <td style="text-align: center">Enhancer</td>
+      <td style="text-align: center"> 0.02 ± 0.01</td>
+      <td style="text-align: center"> 0.04 ± 0.01</td>
+	  <td style="text-align: center"> 0.04 ± 0.01</td>
+	  <td style="text-align: right"><a href="https://arxiv.org/abs/2006.10637">Paper</a>, <a href="https://github.com/twitter-research/tgn">Code</a></td>
+      <td style="text-align: center">23065220</td>
+      <td>Aug 1, 2025</td>
+    </tr>
+	<tr>
+      <td style="text-align: center">13</td>
+      <td style="text-align: center">TCL</td>
+      <td style="text-align: center">Enhancer</td>
+      <td style="text-align: center">0.01 ± 0.00</td>
+      <td style="text-align: center">0.01 ± 0.00</td>
+	  <td style="text-align: center">0.01 ± 0.00</td>
+	  <td style="text-align: right"><a href="https://arxiv.org/abs/2105.07944">Paper</a>, <a href="https://github.com/yule-BUAA/DyGLib">Code</a></td>
+      <td style="text-align: center">17313060</td>
+      <td>Aug 1, 2025</td>
+    </tr>
+	<tr>
+      <td style="text-align: center">14</td>
+      <td style="text-align: center">DyGFormer</td>
+      <td style="text-align: center">Enhancer</td>
+      <td style="text-align: center">0.01 ± 0.00</td>
+      <td style="text-align: center">0.01 ± 0.00</td>
+	  <td style="text-align: center">0.01 ± 0.00</td>
+	  <td style="text-align: right"><a href="https://arxiv.org/abs/2303.13047">Paper</a>, <a href="https://github.com/yule-BUAA/DyGLib">Code</a></td>
+      <td style="text-align: center">6098860</td>
+      <td>Aug 1, 2025</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><a name="Beeradvocate"></a></p>
+
+<hr>
+
+<h3 id="leaderboard-for-ogbn-papers100m">Leaderboard for <a href="nodeprop.html#Beeradvocate">Beeradvocate</a></h3>
+<h5 id="the-classification-accuracy-on-the-test-and-validation-sets-the-higher-the-better-2">The classification accuracy and F1 score for multi-class classification on the test sets. The higher, the better.</h5>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th style="text-align: center">Rank</th>
+      <th style="text-align: center">Method</th>
+      <th style="text-align: center">Role of LLM</th>
+      <th style="text-align: center">Accuracy</th>
+      <th style="text-align: center">F1</th>
+      <th style="text-align: right">References</th>
+      <th style="text-align: center">#Params</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">GraphGPT</td>
+      <td style="text-align: center">Predictor</td>
+      <td style="text-align: center">28.63 ± 0.07</td>
+      <td style="text-align: center">22.52 ± 0.15</td>
+	  <td style="text-align: right"><a href="https://arxiv.org/abs/2310.13023">Paper</a>, <a href="https://github.com/HKUDS/GraphGPT">Code</a></td>
+      <td style="text-align: center">530644992</td>
+      <td>Aug 1, 2025</td>
+    </tr>
+	<tr>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">LLaGA-ND</td>
+      <td style="text-align: center">Predictor</td>
+      <td style="text-align: center">26.23 ± 0.35</td>
+      <td style="text-align: center">17.14 ± 0.38</td>
+	  <td style="text-align: right"><a href="https://arxiv.org/abs/2402.08170">Paper</a>, <a href="https://github.com/VITA-Group/LLaGA">Code</a></td>
+      <td style="text-align: center">6422528</td>
+      <td>Aug 1, 2025</td>
+    </tr>
+	<tr>
+      <td style="text-align: center">3</td>
+      <td style="text-align: center">LLaGA-HO</td>
+      <td style="text-align: center">Predictor</td>
+      <td style="text-align: center">25.66 ± 0.01</td>
+      <td style="text-align: center">17.07 ± 0.08</td>
+	  <td style="text-align: right"><a href="https://arxiv.org/abs/2402.08170">Paper</a>, <a href="https://github.com/VITA-Group/LLaGA">Code</a></td>
+      <td style="text-align: center">6422528</td>
+      <td>Aug 1, 2025</td>
+    </tr>
+	<tr>
+      <td style="text-align: center">4</td>
+      <td style="text-align: center">TempPrompt</td>
+      <td style="text-align: center">Predictor</td>
+      <td style="text-align: center">20.72 ± 0.72</td>
+      <td style="text-align: center">20.53 ± 0.09</td>
+	  <td style="text-align: right"><a href="https://openreview.net/forum?id=2DBoOpa8FY">Paper</a>, <a href="https://anonymous.4open.science/r/TTGBench-0379/README.md">Code</a></td>
+      <td style="text-align: center">NA</td>
+      <td>Aug 1, 2025</td>
+    </tr>
+	<tr>
+      <td style="text-align: center">5</td>
+      <td style="text-align: center">DST-v2</td>
+      <td style="text-align: center">Predictor</td>
+      <td style="text-align: center">20.54 ± 0.22</td>
+      <td style="text-align: center">20.44 ± 0.11</td>
+	  <td style="text-align: right"><a href="https://openreview.net/forum?id=2DBoOpa8FY">Paper</a>, <a href="https://anonymous.4open.science/r/TTGBench-0379/README.md">Code</a></td>
+      <td style="text-align: center">NA</td>
+      <td>Aug 1, 2025</td>
+    </tr>
+	<tr>
+      <td style="text-align: center">6</td>
+      <td style="text-align: center">DST-v1</td>
+      <td style="text-align: center">Predictor</td>
+      <td style="text-align: center">20.25 ± 0.20</td>
+      <td style="text-align: center">20.18 ± 0.06</td>
+	  <td style="text-align: right"><a href="https://openreview.net/forum?id=2DBoOpa8FY">Paper</a>, <a href="https://anonymous.4open.science/r/TTGBench-0379/README.md">Code</a></td>
+      <td style="text-align: center">NA</td>
+      <td>Aug 1, 2025</td>
+    </tr>
+	<tr>
+      <td style="text-align: center">7</td>
+      <td style="text-align: center">DyGFormer</td>
+      <td style="text-align: center">Enhancer</td>
+      <td style="text-align: center">20.10 ± 0.81</td>
+      <td style="text-align: center">17.06 ± 2.23</td>
+	  <td style="text-align: right"><a href="https://arxiv.org/abs/2303.13047">Paper</a>, <a href="https://github.com/yule-BUAA/DyGLib">Code</a></td>
+      <td style="text-align: center">6098860</td>
+      <td>Aug 1, 2025</td>
+    </tr>
+	<tr>
+      <td style="text-align: center">8</td>
+      <td style="text-align: center">TCL</td>
+      <td style="text-align: center">Enhancer</td>
+      <td style="text-align: center">15.98 ± 0.49</td>
+      <td style="text-align: center">13.65 ± 0.31</td>
+	  <td style="text-align: right"><a href="https://arxiv.org/abs/2105.07944">Paper</a>, <a href="https://github.com/yule-BUAA/DyGLib">Code</a></td>
+      <td style="text-align: center">17313060</td>
+      <td>Aug 1, 2025</td>
+    </tr>
+	<tr>
+      <td style="text-align: center">9</td>
+      <td style="text-align: center">CAWN</td>
+      <td style="text-align: center">Enhancer</td>
+      <td style="text-align: center">14.48 ± 3.12</td>
+      <td style="text-align: center">12.10 ± 3.25</td>
+	  <td style="text-align: right"><a href="https://openreview.net/forum?id=KYPz4YsCPj">Paper</a>, <a href="https://github.com/snap-stanford/CAW">Code</a></td>
+      <td style="text-align: center">44341348</td>
+      <td>Aug 1, 2025</td>
+    </tr>
+	<tr>
+      <td style="text-align: center">10</td>
+      <td style="text-align: center">TGAT</td>
+      <td style="text-align: center">Enhancer</td>
+      <td style="text-align: center">12.22 ± 5.30</td>
+      <td style="text-align: center">6.87 ± 3.86</td>
+	  <td style="text-align: right"><a href="https://openreview.net/forum?id=rJeW1yHYwH">Paper</a>, <a href="https://github.com/yule-BUAA/DyGLib">Code</a></td>
+      <td style="text-align: center">15517316</td>
+      <td>Aug 1, 2025</td>
+    </tr>
+	<tr>
+      <td style="text-align: center">11</td>
+      <td style="text-align: center">JODIE</td>
+      <td style="text-align: center">Enhancer</td>
+      <td style="text-align: center">11.49 ± 5.30</td>
+      <td style="text-align: center">8.59 ± 6.80</td>
+	  <td style="text-align: right"><a href="https://dl.acm.org/doi/10.1145/3292500.3330895">Paper</a>, <a href="https://github.com/claws-lab/jodie">Code</a></td>
+      <td style="text-align: center">3702564</td>
+      <td>Aug 1, 2025</td>
+    </tr>
+	<tr>
+      <td style="text-align: center">12</td>
+      <td style="text-align: center">TGN</td>
+      <td style="text-align: center">Enhancer</td>
+      <td style="text-align: center">10.79 ± 2.79</td>
+      <td style="text-align: center">8.03 ± 4.79</td>
+	  <td style="text-align: right"><a href="https://arxiv.org/abs/2006.10637">Paper</a>, <a href="https://github.com/twitter-research/tgn">Code</a></td>
+      <td style="text-align: center">23065220</td>
+      <td>Aug 1, 2025</td>
+    </tr>
+	<tr>
+      <td style="text-align: center">13</td>
+      <td style="text-align: center">DyRep</td>
+      <td style="text-align: center">Enhancer</td>
+      <td style="text-align: center">8.04 ± 1.29</td>
+      <td style="text-align: center">4.36 ± 1.75</td>
+	  <td style="text-align: right"><a href="https://openreview.net/forum?id=HyePrhR5KX">Paper</a>, <a href="https://github.com/yule-BUAA/DyGLib">Code</a></td>
+      <td style="text-align: center">18033284</td>
+      <td>Aug 1, 2025</td>
+    </tr>
+	<tr>
+      <td style="text-align: center">14</td>
+      <td style="text-align: center">GraphMixer</td>
+      <td style="text-align: center">Enhancer</td>
+      <td style="text-align: center">7.50 ± 1.06</td>
+      <td style="text-align: center">3.68 ± 1.48</td>
+	  <td style="text-align: right"><a href="https://openreview.net/forum?id=ayPPc0SyLv1">Paper</a>, <a href="https://github.com/yule-BUAA/DyGLib">Code</a></td>
+      <td style="text-align: center">12567644</td>
+      <td>Aug 1, 2025</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><a name="Amazon-Kindle"></a></p>
+
+<hr>
+
+<h3 id="leaderboard-for-ogbn-mag">Leaderboard for <a href="nodeprop.html#Amazon-Kindle">Amazon-Kindle</a></h3>
+<h5 id="the-classification-accuracy-on-the-test-and-validation-sets-the-higher-the-better-3">The classification accuracy and F1 score for multi-class classification on the test sets. The higher, the better.</h5>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th style="text-align: center">Rank</th>
+      <th style="text-align: center">Method</th>
+      <th style="text-align: center">Role of LLM</th>
+      <th style="text-align: center">Accuracy</th>
+      <th style="text-align: center">F1</th>
+      <th style="text-align: right">References</th>
+      <th style="text-align: center">#Params</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">GraphGPT</td>
+      <td style="text-align: center">Predictor</td>
+      <td style="text-align: center">87.94 ± 0.73</td>
+      <td style="text-align: center">82.50 ± 0.16</td>
+	  <td style="text-align: right"><a href="https://arxiv.org/abs/2310.13023">Paper</a>, <a href="https://github.com/HKUDS/GraphGPT">Code</a></td>
+      <td style="text-align: center">530644992</td>
+      <td>Aug 1, 2025</td>
+    </tr>
+	<tr>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">LLaGA-ND</td>
+      <td style="text-align: center">Predictor</td>
+      <td style="text-align: center">87.83 ± 0.07</td>
+      <td style="text-align: center">83.53 ± 0.10</td>
+	  <td style="text-align: right"><a href="https://arxiv.org/abs/2402.08170">Paper</a>, <a href="https://github.com/VITA-Group/LLaGA">Code</a></td>
+      <td style="text-align: center">6422528</td>
+      <td>Aug 1, 2025</td>
+    </tr>
+	<tr>
+      <td style="text-align: center">3</td>
+      <td style="text-align: center">LLaGA-HO</td>
+      <td style="text-align: center">Predictor</td>
+      <td style="text-align: center">87.45 ± 0.14</td>
+      <td style="text-align: center">84.40 ± 0.22</td>
+	  <td style="text-align: right"><a href="https://arxiv.org/abs/2402.08170">Paper</a>, <a href="https://github.com/VITA-Group/LLaGA">Code</a></td>
+      <td style="text-align: center">6422528</td>
+      <td>Aug 1, 2025</td>
+    </tr>
+	<tr>
+      <td style="text-align: center">4</td>
+      <td style="text-align: center">TempPrompt</td>
+      <td style="text-align: center">Predictor</td>
+      <td style="text-align: center">85.47 ±  0.39</td>
+      <td style="text-align: center">84.60 ± 0.15</td>
+	  <td style="text-align: right"><a href="https://openreview.net/forum?id=2DBoOpa8FY">Paper</a>, <a href="https://anonymous.4open.science/r/TTGBench-0379/README.md">Code</a></td>
+      <td style="text-align: center">NA</td>
+      <td>Aug 1, 2025</td>
+    </tr>
+	<tr>
+      <td style="text-align: center">5</td>
+      <td style="text-align: center">DST-v1</td>
+      <td style="text-align: center">Predictor</td>
+      <td style="text-align: center">85.05 ± 0.25</td>
+      <td style="text-align: center">84.36 ± 0.11</td>
+	  <td style="text-align: right"><a href="https://openreview.net/forum?id=2DBoOpa8FY">Paper</a>, <a href="https://anonymous.4open.science/r/TTGBench-0379/README.md">Code</a></td>
+      <td style="text-align: center">NA</td>
+      <td>Aug 1, 2025</td>
+    </tr>
+	<tr>
+      <td style="text-align: center">6</td>
+      <td style="text-align: center">DST-v2</td>
+      <td style="text-align: center">Predictor</td>
+      <td style="text-align: center">84.37 ± 0.12</td>
+      <td style="text-align: center">83.95 ± 0.07</td>
+	  <td style="text-align: right"><a href="https://openreview.net/forum?id=2DBoOpa8FY">Paper</a>, <a href="https://anonymous.4open.science/r/TTGBench-0379/README.md">Code</a></td>
+      <td style="text-align: center">NA</td>
+      <td>Aug 1, 2025</td>
+    </tr>
+	<tr>
+      <td style="text-align: center">7</td>
+      <td style="text-align: center">TCL</td>
+      <td style="text-align: center">Enhancer</td>
+      <td style="text-align: center">68.38 ± 0.02</td>
+      <td style="text-align: center">74.72 ± 0.02</td>
+	  <td style="text-align: right"><a href="https://arxiv.org/abs/2105.07944">Paper</a>, <a href="https://github.com/yule-BUAA/DyGLib">Code</a></td>
+      <td style="text-align: center">17313060</td>
+      <td>Aug 1, 2025</td>
+    </tr>
+	<tr>
+      <td style="text-align: center">8</td>
+      <td style="text-align: center">DyGFormer</td>
+      <td style="text-align: center">Enhancer</td>
+      <td style="text-align: center">61.93 ± 0.80</td>
+      <td style="text-align: center">69.83 ± 0.66</td>
+	  <td style="text-align: right"><a href="https://arxiv.org/abs/2303.13047">Paper</a>, <a href="https://github.com/yule-BUAA/DyGLib">Code</a></td>
+      <td style="text-align: center">6098860</td>
+      <td>Aug 1, 2025</td>
+    </tr>
+	<tr>
+      <td style="text-align: center">9</td>
+      <td style="text-align: center">TGN</td>
+      <td style="text-align: center">Enhancer</td>
+      <td style="text-align: center">59.55 ± 3.73</td>
+      <td style="text-align: center">68.01 ± 2.96</td>
+	  <td style="text-align: right"><a href="https://arxiv.org/abs/2006.10637">Paper</a>, <a href="https://github.com/twitter-research/tgn">Code</a></td>
+      <td style="text-align: center">23065220</td>
+      <td>Aug 1, 2025</td>
+    </tr>
+	<tr>
+      <td style="text-align: center">10</td>
+      <td style="text-align: center">TGAT</td>
+      <td style="text-align: center">Enhancer</td>
+      <td style="text-align: center">58.92 ± 1.18</td>
+      <td style="text-align: center">67.74 ± 0.90</td>
+	  <td style="text-align: right"><a href="https://openreview.net/forum?id=rJeW1yHYwH">Paper</a>, <a href="https://github.com/yule-BUAA/DyGLib">Code</a></td>
+      <td style="text-align: center">15517316</td>
+      <td>Aug 1, 2025</td>
+    </tr>
+	<tr>
+      <td style="text-align: center">11</td>
+      <td style="text-align: center">CAWN</td>
+      <td style="text-align: center">Enhancer</td>
+      <td style="text-align: center">58.24 ± 0.83</td>
+      <td style="text-align: center">67.35 ± 0.74</td>
+	  <td style="text-align: right"><a href="https://openreview.net/forum?id=KYPz4YsCPj">Paper</a>, <a href="https://github.com/snap-stanford/CAW">Code</a></td>
+      <td style="text-align: center">44341348</td>
+      <td>Aug 1, 2025</td>
+    </tr>
+	<tr>
+      <td style="text-align: center">12</td>
+      <td style="text-align: center">JODIE</td>
+      <td style="text-align: center">Enhancer</td>
+      <td style="text-align: center">56.80 ± 2.66</td>
+      <td style="text-align: center">65.94 ± 2.04</td>
+	  <td style="text-align: right"><a href="https://dl.acm.org/doi/10.1145/3292500.3330895">Paper</a>, <a href="https://github.com/claws-lab/jodie">Code</a></td>
+      <td style="text-align: center">3702564</td>
+      <td>Aug 1, 2025</td>
+    </tr>
+	<tr>
+      <td style="text-align: center">13</td>
+      <td style="text-align: center">DyRep</td>
+      <td style="text-align: center">Enhancer</td>
+      <td style="text-align: center">55.30 ± 3.09</td>
+      <td style="text-align: center">64.73 ± 2.58</td>
+	  <td style="text-align: right"><a href="https://openreview.net/forum?id=HyePrhR5KX">Paper</a>, <a href="https://github.com/yule-BUAA/DyGLib">Code</a></td>
+      <td style="text-align: center">18033284</td>
+      <td>Aug 1, 2025</td>
+    </tr>
+	<tr>
+      <td style="text-align: center">14</td>
+      <td style="text-align: center">GraphMixer</td>
+      <td style="text-align: center">Enhancer</td>
+      <td style="text-align: center">54.80 ± 0.61</td>
+      <td style="text-align: center">64.36 ± 0.49</td>
+	  <td style="text-align: right"><a href="https://openreview.net/forum?id=ayPPc0SyLv1">Paper</a>, <a href="https://github.com/yule-BUAA/DyGLib">Code</a></td>
+      <td style="text-align: center">12567644</td>
+      <td>Aug 1, 2025</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><a name="Ratebeer"></a></p>
+
+<h3 id="leaderboard-for-ogbn-mag">Leaderboard for <a href="nodeprop.html#Ratebeer">Ratebeer</a></h3>
+<h5 id="the-classification-accuracy-on-the-test-and-validation-sets-the-higher-the-better-3">The classification accuracy and F1 score for multi-class classification on the test sets. The higher, the better.</h5>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th style="text-align: center">Rank</th>
+      <th style="text-align: center">Method</th>
+      <th style="text-align: center">Role of LLM</th>
+      <th style="text-align: center">Accuracy</th>
+      <th style="text-align: center">F1</th>
+      <th style="text-align: right">References</th>
+      <th style="text-align: center">#Params</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">LLaGA-ND</td>
+      <td style="text-align: center">Predictor</td>
+      <td style="text-align: center">24.49 ± 0.01</td>
+      <td style="text-align: center">16.42 ± 0.08</td>
+	  <td style="text-align: right"><a href="https://arxiv.org/abs/2402.08170">Paper</a>, <a href="https://github.com/VITA-Group/LLaGA">Code</a></td>
+      <td style="text-align: center">6422528</td>
+      <td>Aug 1, 2025</td>
+    </tr>
+	<tr>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">LLaGA-HO</td>
+      <td style="text-align: center">Predictor</td>
+      <td style="text-align: center">24.47 ± 0.23</td>
+      <td style="text-align: center">16.27 ± 0.13</td>
+	  <td style="text-align: right"><a href="https://arxiv.org/abs/2402.08170">Paper</a>, <a href="https://github.com/VITA-Group/LLaGA">Code</a></td>
+      <td style="text-align: center">6422528</td>
+      <td>Aug 1, 2025</td>
+    </tr>
+	<tr>
+      <td style="text-align: center">3</td>
+      <td style="text-align: center">TCL</td>
+      <td style="text-align: center">Enhancer</td>
+      <td style="text-align: center">19.72 ± 3.13</td>
+      <td style="text-align: center">20.16 ± 2.75</td>
+	  <td style="text-align: right"><a href="https://arxiv.org/abs/2105.07944">Paper</a>, <a href="https://github.com/yule-BUAA/DyGLib">Code</a></td>
+      <td style="text-align: center">17313060</td>
+      <td>Aug 1, 2025</td>
+    </tr>
+	<tr>
+      <td style="text-align: center">4</td>
+      <td style="text-align: center">GraphGPT</td>
+      <td style="text-align: center">Predictor</td>
+      <td style="text-align: center">19.49 ± 0.09</td>
+      <td style="text-align: center">17.72 ± 0.30</td>
+	  <td style="text-align: right"><a href="https://arxiv.org/abs/2310.13023">Paper</a>, <a href="https://github.com/HKUDS/GraphGPT">Code</a></td>
+      <td style="text-align: center">530644992</td>
+      <td>Aug 1, 2025</td>
+    </tr>
+	<tr>
+      <td style="text-align: center">5</td>
+      <td style="text-align: center">DyGFormer</td>
+      <td style="text-align: center">Enhancer</td>
+      <td style="text-align: center">17.70 ± 1.15</td>
+      <td style="text-align: center">17.70 ± 0.67</td>
+	  <td style="text-align: right"><a href="https://arxiv.org/abs/2303.13047">Paper</a>, <a href="https://github.com/yule-BUAA/DyGLib">Code</a></td>
+      <td style="text-align: center">6098860</td>
+      <td>Aug 1, 2025</td>
+    </tr>
+	<tr>
+      <td style="text-align: center">6</td>
+      <td style="text-align: center">DST-v2</td>
+      <td style="text-align: center">Predictor</td>
+      <td style="text-align: center">16.84 ± 0.15</td>
+      <td style="text-align: center">16.79 ± 0.11</td>
+	  <td style="text-align: right"><a href="https://openreview.net/forum?id=2DBoOpa8FY">Paper</a>, <a href="https://anonymous.4open.science/r/TTGBench-0379/README.md">Code</a></td>
+      <td style="text-align: center">NA</td>
+      <td>Aug 1, 2025</td>
+    </tr>
+	<tr>
+      <td style="text-align: center">7</td>
+      <td style="text-align: center">TempPrompt</td>
+      <td style="text-align: center">Predictor</td>
+      <td style="text-align: center">16.28 ± 0.12</td>
+      <td style="text-align: center">16.22 ± 0.08</td>
+	  <td style="text-align: right"><a href="https://openreview.net/forum?id=2DBoOpa8FY">Paper</a>, <a href="https://anonymous.4open.science/r/TTGBench-0379/README.md">Code</a></td>
+      <td style="text-align: center">NA</td>
+      <td>Aug 1, 2025</td>
+    </tr>
+	<tr>
+      <td style="text-align: center">8</td>
+      <td style="text-align: center">DST-v1</td>
+      <td style="text-align: center">Predictor</td>
+      <td style="text-align: center">15.46 ± 0.13</td>
+      <td style="text-align: center">15.34 ± 0.06</td>
+	  <td style="text-align: right"><a href="https://openreview.net/forum?id=2DBoOpa8FY">Paper</a>, <a href="https://anonymous.4open.science/r/TTGBench-0379/README.md">Code</a></td>
+      <td style="text-align: center">NA</td>
+      <td>Aug 1, 2025</td>
+    </tr>
+	<tr>
+      <td style="text-align: center">9</td>
+      <td style="text-align: center">TGN</td>
+      <td style="text-align: center">Enhancer</td>
+      <td style="text-align: center">10.84 ± 1.71</td>
+      <td style="text-align: center">7.24 ± 0.09</td>
+	  <td style="text-align: right"><a href="https://arxiv.org/abs/2006.10637">Paper</a>, <a href="https://github.com/twitter-research/tgn">Code</a></td>
+      <td style="text-align: center">23065220</td>
+      <td>Aug 1, 2025</td>
+    </tr>
+	<tr>
+      <td style="text-align: center">10</td>
+      <td style="text-align: center">DyRep</td>
+      <td style="text-align: center">Enhancer</td>
+      <td style="text-align: center">10.20 ± 3.08</td>
+      <td style="text-align: center">8.29 ± 3.46</td>
+	  <td style="text-align: right"><a href="https://openreview.net/forum?id=HyePrhR5KX">Paper</a>, <a href="https://github.com/yule-BUAA/DyGLib">Code</a></td>
+      <td style="text-align: center">18033284</td>
+      <td>Aug 1, 2025</td>
+    </tr>
+	<tr>
+      <td style="text-align: center">11</td>
+      <td style="text-align: center">TGAT</td>
+      <td style="text-align: center">Enhancer</td>
+      <td style="text-align: center">10.00 ± 1.66</td>
+      <td style="text-align: center">8.11 ± 1.58</td>
+	  <td style="text-align: right"><a href="https://openreview.net/forum?id=rJeW1yHYwH">Paper</a>, <a href="https://github.com/yule-BUAA/DyGLib">Code</a></td>
+      <td style="text-align: center">15517316</td>
+      <td>Aug 1, 2025</td>
+    </tr>
+	<tr>
+      <td style="text-align: center">12</td>
+      <td style="text-align: center">CAWN</td>
+      <td style="text-align: center">Enhancer</td>
+      <td style="text-align: center">8.44 ± 0.25</td>
+      <td style="text-align: center">7.05 ± 1.07</td>
+	  <td style="text-align: right"><a href="https://openreview.net/forum?id=KYPz4YsCPj">Paper</a>, <a href="https://github.com/snap-stanford/CAW">Code</a></td>
+      <td style="text-align: center">44341348</td>
+      <td>Aug 1, 2025</td>
+    </tr>
+	<tr>
+      <td style="text-align: center">13</td>
+      <td style="text-align: center">GraphMixer</td>
+      <td style="text-align: center">Enhancer</td>
+      <td style="text-align: center">7.76 ± 4.05</td>
+      <td style="text-align: center">6.33 ± 4.60</td>
+	  <td style="text-align: right"><a href="https://openreview.net/forum?id=ayPPc0SyLv1">Paper</a>, <a href="https://github.com/yule-BUAA/DyGLib">Code</a></td>
+      <td style="text-align: center">12567644</td>
+      <td>Aug 1, 2025</td>
+    </tr>
+	<tr>
+      <td style="text-align: center">14</td>
+      <td style="text-align: center">JODIE</td>
+      <td style="text-align: center">Enhancer</td>
+      <td style="text-align: center">5.59 ± 1.78</td>
+      <td style="text-align: center">4.80 ± 1.46</td>
+	  <td style="text-align: right"><a href="https://dl.acm.org/doi/10.1145/3292500.3330895">Paper</a>, <a href="https://github.com/claws-lab/jodie">Code</a></td>
+      <td style="text-align: center">3702564</td>
+      <td>Aug 1, 2025</td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+            <!-- <hr> -->
+            <!-- 
+
+
+
+
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+    <ul class="pager">
+      
+        
+        
+        <li class="previous">
+          <a href="/docs/leader_overview/">
+            <span aria-hidden="true">&larr;</span> Previous
+          </a>
+        </li>
+      
+
+      
+        
+        
+        <li class="next">
+          <a href="/docs/leader_linkprop/">
+            Next <span aria-hidden="true">&rarr;</span>
+          </a>
+        </li>
+      
+      </ul>
+    <div class="clear"></div>
+    
+ -->
+        </div>
+
+    </div>
+</div>
+
+        </div>
+    </div>
+
+    <footer class="footer">
+    <div class="container">
+
+        <p class="text-center">
+            TTGBench 2025 |
+            Powered by <a href="https://github.com/aksakalli/jekyll-doc-theme">Jekyll Doc Theme</a>
+        </p>
+        <!-- <p class="text-muted">Place sticky footer content here.</p> -->
+    </div>
+</footer>
+
+    <script>
+  var baseurl = ''
+</script>
+<script src="./assets/jquery-1.12.4.min.js.下载"></script>
+<script src="./assets/bootstrap.min.js.下载"></script>
+<script src="./assets/typeahead.bundle.min.js.下载"></script>
+
+<script src="./assets/main.js.下载"></script>
+
+
+
+
+</body></html>

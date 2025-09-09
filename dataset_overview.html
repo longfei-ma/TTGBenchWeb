@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<!-- saved from url=(0047)https://ogb.stanford.edu/docs/dataset_overview/ -->
+<html lang="en-US"><!-- Global site tag (gtag.js) - Google Analytics -->
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript" async="" src="./assets/analytics.js.下载"></script><script type="text/javascript" async="" src="./assets/js"></script><script async="" src="./assets/js(1)"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-165257358-1');
+</script>
+
+	<link rel="icon" href="./assets/icon.png" type="image/png">
+    <link rel="shortcut icon" href="./assets/icon.png" type="image/png">
+    <link rel="apple-touch-icon" href="./assets/icon.png">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="./assets/main.css">
+    <link rel="stylesheet" href="./assets/font-awesome.min.css">
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>TTGBench</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<meta name="generator" content="Jekyll v3.10.0">
+<meta property="og:title" content="TTGBench">
+<meta property="og:locale" content="en_US">
+</head>
+
+
+<body>
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container navbar-container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+            <a class="navbar-brand" href="index.html">
+                <span><img src="./assets/ttgbench.png" alt="Logo"></span> 
+            </a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <div class="navbar-right">
+                <ul class="nav navbar-nav">
+                <li><a href="index.html">Overview</a></li>
+                <li><a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    Datasets <span class="caret"></span>
+                </a>
+                    <ul class="dropdown-menu">
+                      <li><a href="dataset_overview.html">Overview</a></li>
+                      <li class="divider"></li>
+                      <li><a href="linkprop.html">Future Link Prediction</a></li>
+                      <li class="divider"></li>
+                      <li><a href="nodeprop.html">Dynamic Node Classification</a></li>
+                    </ul>
+                </li>
+                <li><a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    Leaderboards <span class="caret"></span>
+                </a>
+                    <ul class="dropdown-menu">
+                      <li><a href="leader_linkprop.html">Future Link Prediction</a></li>
+                      <li class="divider"></li>
+                      <li><a href="leader_nodeprop.html">Dynamic Node Classification</a></li>
+                      <li class="divider"></li>
+                      <li><a href="leader_rules.html">Rules</a></li>
+                    </ul>
+                </li>
+                
+                <li><a href="https://openreview.net/forum?id=2DBoOpa8FY">Paper</a></li>
+                <li><a href="https://anonymous.4open.science/r/TTGBench-0379/README.md">Github</a></li>
+            </ul></div>
+        </div>
+    </div>
+</nav>
+
+
+    <div class="page-content">
+        <div class="wrapper">
+            <div class="container">
+    <div class="row">
+<!--         <div class="col-md-3">
+          <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-1" aria-expanded="false" aria-controls="collapse-1">
+            Welcome
+          </a>
+        </h4>
+      </div>
+      
+      
+      <div class="panel-collapse collapse" id="collapse-1" role="tabpanel" aria-label="Side Navigation">
+        <div class="list-group">
+          
+            
+            
+            <a class="list-group-item " href="/docs/home/">Get Started</a>
+          
+        </div>
+      </div>
+    </div>
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-2" aria-expanded="false" aria-controls="collapse-2">
+            Datasets
+          </a>
+        </h4>
+      </div>
+      
+      
+      <div class="panel-collapse" id="collapse-2" role="tabpanel" aria-label="Side Navigation">
+        <div class="list-group">
+          
+            
+            
+            <a class="list-group-item active" href="/docs/dataset_overview/">OGB Dataset Overview</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/nodeprop/">Node Property Prediction</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/linkprop/">Link Property Prediction</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/graphprop/">Graph Property Prediction</a>
+          
+        </div>
+      </div>
+    </div>
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-3" aria-expanded="false" aria-controls="collapse-3">
+            Leaderboard
+          </a>
+        </h4>
+      </div>
+      
+      
+      <div class="panel-collapse collapse" id="collapse-3" role="tabpanel" aria-label="Side Navigation">
+        <div class="list-group">
+          
+            
+            
+            <a class="list-group-item " href="/docs/leader_overview/">Leaderboards</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/leader_nodeprop/">Leaderboards for Node Property Prediction</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/leader_linkprop/">Leaderboards for Link Property Prediction</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/leader_graphprop/">Leaderboards for Graph Property Prediction</a>
+          
+        </div>
+      </div>
+    </div>
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-4" aria-expanded="false" aria-controls="collapse-4">
+            Frequently Asked Questions
+          </a>
+        </h4>
+      </div>
+      
+      
+      <div class="panel-collapse collapse" id="collapse-4" role="tabpanel" aria-label="Side Navigation">
+        <div class="list-group">
+          
+            
+            
+            <a class="list-group-item " href=""></a>
+          
+        </div>
+      </div>
+    </div>
+  
+</div>
+
+        </div> -->
+        <div class="col-md-12">
+            <h1>TTGBench Dataset Overview</h1>
+            <div id="markdown-content-container"><!-- Benchmark datasets are broadly classified into three categories representing three key graph machine learning tasks.  -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <p class="lead">
+                TTGBench provides graph datasets enriched with textual attributes, timestamped links, and real-time labels, spanning key temporal graph learning tasks, multiple scales, and diverse domains. 
+            </p> 
+			<p class="lead">
+                <b>Comprehensive task coverage:</b> We include both the <a href="linkprop.html">future link prediction</a> and the <a href="nodeprop.html">dynamic node classification</a> tasks<br>, with the latter accommodating both multi-class and multi-label classification settings.
+            </p>
+			
+            <p class="lead">
+                <b>Rich textual attributes:</b> We introduce temporal graph datasets in which both nodes and edges are associated with textual attributes. <br>
+				 
+            </p>
+			<p class="lead">
+                <b>Diverse scale and more emerging edges:</b> TTGBench datasets span <span class="red-text">small</span>, <span class="blue-text">medium</span> and <span class="green-text">large</span> scales <br>, and feature a higher proportion of novel edges (i.e., with few recurring edges).
+            </p>
+            <p class="lead">
+                <b>Rich domains:</b> TTGBench datasets come from diverse fine-grained domains, including culinary recipe feedback, movie reviews, book reading records, beer rating data and online shopping interactions.  <br>
+            </p>
+			
+        </div>
+        <div class="col-md-6 text-center">
+            <img src="./assets/dataset_overview.png" class="img-responsive">
+        </div>
+    </div>
+</div>
+<hr>
+
+<!-- ### **Contributing datasets**
+<p class="lead">
+<font size="5">OGB is an on-going community-driven effort and welcomes contribution of datasets from the community. <br/>
+If you are interested, please follow the instructions <a href="https://docs.google.com/document/d/e/2PACX-1vS1hBTYLONRwAU9UxK42USTuRKrt_Yk4H0EhpLvJC_eOrGxbJUtrzDqlIStAFpnwZt2N28B3MuSxgqj/pub">here</a>.  </font>
+</p> -->
+
+</div>
+            <!-- <hr> -->
+            <!-- 
+
+
+
+
+
+  
+  
+
+  
+  
+    <ul class="pager">
+      
+        
+        
+        <li class="previous">
+          <a href="/docs/home/">
+            <span aria-hidden="true">&larr;</span> Previous
+          </a>
+        </li>
+      
+
+      
+        
+        
+        <li class="next">
+          <a href="/docs/nodeprop/">
+            Next <span aria-hidden="true">&rarr;</span>
+          </a>
+        </li>
+      
+      </ul>
+    <div class="clear"></div>
+    
+ -->
+        </div>
+
+    </div>
+</div>
+
+        </div>
+    </div>
+
+    <footer class="footer">
+    <div class="container">
+
+        <p class="text-center">
+            TTGBench 2025 |
+            Powered by <a href="https://github.com/aksakalli/jekyll-doc-theme">Jekyll Doc Theme</a>
+        </p>
+        <!-- <p class="text-muted">Place sticky footer content here.</p> -->
+    </div>
+</footer>
+
+    <script>
+  var baseurl = ''
+</script>
+<script src="./assets/jquery-1.12.4.min.js.下载"></script>
+<script src="./assets/bootstrap.min.js.下载"></script>
+<script src="./assets/typeahead.bundle.min.js.下载"></script>
+
+<script src="./assets/main.js.下载"></script>
+
+
+
+
+</body></html>
